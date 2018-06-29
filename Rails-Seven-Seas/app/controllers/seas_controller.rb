@@ -1,5 +1,21 @@
 class SeasController < ApplicationController
-  #define your controller actions here
+
+  def welcome
+    #render "/seas/welcome"   #seas folder, file welcome
+  end
+
+  def index
+    @seas = Sea.all
+    #render "/seas/index"  #this line is needed if this method and the corresponding *.html.erb files has diff names
+  end
+
+  def show
+    @sea = Sea.find(params[:id])
+  end
+
+  def edit
+    @sea = Sea.find(params[:id])
+  end
 
 
   private
